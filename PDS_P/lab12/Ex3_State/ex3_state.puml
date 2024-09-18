@@ -1,0 +1,74 @@
+@startuml
+
+interface EstadoLivro {
+    void regista(Livro livro)
+    void requisita(Livro livro)
+    void reserva(Livro livro)
+    void cancelaReserva(Livro livro)
+    void devolve(Livro livro)
+}
+
+class Disponível implements EstadoLivro {
+    + void regista(Livro livro)
+    + void requisita(Livro livro)
+    + void reserva(Livro livro)
+    + void cancelaReserva(Livro livro)
+    + void devolve(Livro livro)
+}
+
+class Emprestado implements EstadoLivro {
+    + void regista(Livro livro)
+    + void requisita(Livro livro)
+    + void reserva(Livro livro)
+    + void cancelaReserva(Livro livro)
+    + void devolve(Livro livro)
+}
+
+class Inventário implements EstadoLivro {
+    + void regista(Livro livro)
+    + void requisita(Livro livro)
+    + void reserva(Livro livro)
+    + void cancelaReserva(Livro livro)
+    + void devolve(Livro livro)
+}
+
+class Reservado implements EstadoLivro {
+    + void regista(Livro livro)
+    + void requisita(Livro livro)
+    + void reserva(Livro livro)
+    + void cancelaReserva(Livro livro)
+    + void devolve(Livro livro)
+}
+
+class Livro {
+    - EstadoLivro estado
+    - String titulo
+    - String ISBN
+    - int ano
+    - String autor
+
+    + Livro(String titulo, String ISBN, int ano, String autor)
+    + EstadoLivro getEstado()
+    + void setEstado(EstadoLivro estado)
+    + String getTitulo()
+    + void setTitulo(String titulo)
+    + String getISBN()
+    + void setISBN(String ISBN)
+    + int getAno()
+    + void setAno(int ano)
+    + String getAutor()
+    + void setAutor(String autor)
+    + void regista()
+    + void requisita()
+    + void reserva()
+    + void cancelaReserva()
+    + void devolve()
+}
+
+Livro --> EstadoLivro
+EstadoLivro <|-- Disponível
+EstadoLivro <|-- Emprestado
+EstadoLivro <|-- Inventário
+EstadoLivro <|-- Reservado
+
+@enduml

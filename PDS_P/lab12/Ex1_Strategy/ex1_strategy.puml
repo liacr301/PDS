@@ -1,0 +1,53 @@
+@startuml
+
+class PhoneInfo {
+    - String model
+    - String brand
+    - String cpu
+    - String price
+    - String ram
+    - String camera
+    + PhoneInfo(String, String, String, String, String, String)
+    + String getModel()
+    + void setModel(String)
+    + String getBrand()
+    + void setBrand(String)
+    + String getCpu()
+    + void setCpu(String)
+    + String getPrice()
+    + void setPrice(String)
+    + String getRam()
+    + void setRam(String)
+    + String getCamera()
+    + void setCamera(String)
+}
+interface OrderStrategy {
+    + void order(ArrayList<PhoneInfo> infos)
+}
+class BubbleSortStrategy implements OrderStrategy {
+    + void order(ArrayList<PhoneInfo> infos)
+}
+class InsertionSortStrategy implements OrderStrategy {
+    + void order(ArrayList<PhoneInfo> infos)
+}
+class SelectionSortStrategy implements OrderStrategy {
+    + void order(ArrayList<PhoneInfo> infos)
+}
+class PhoneList {
+    - ArrayList<PhoneInfo> phoneInfos
+    - OrderStrategy orderStrategy
+    + PhoneList()
+    + void add(PhoneInfo phoneInfo)
+    + void setOrderStrategy(OrderStrategy orderStrategy)
+    + void order()
+}
+class Test {
+    + static void main(String[] args)
+}
+PhoneInfo --> PhoneList
+PhoneList o-- OrderStrategy
+OrderStrategy <|.. BubbleSortStrategy
+OrderStrategy <|.. InsertionSortStrategy
+OrderStrategy <|.. SelectionSortStrategy
+
+@enduml

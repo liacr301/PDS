@@ -1,0 +1,10 @@
+*.class
+*.iml
+*.jar
+*.war
+*.ear
+*.txt
+lab01.iml
+PDS_21-22-P01.pdf
+out
+.idea

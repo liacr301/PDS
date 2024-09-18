@@ -1,0 +1,34 @@
+@startuml
+
+interface Command<E> {
+    +execute(element: E): boolean
+    +undo(): void
+}
+
+class CommandAdd<E> {
+    -collection: Collection<E>
+    -list: List<E>
+    +CommandAdd(collection: Collection<E>)
+    +execute(element: E): boolean
+    +undo(): void
+}
+
+class CommandRemove<E> {
+    -collection: Collection<E>
+    -list: List<E>
+    +CommandRemove(collection: Collection<E>)
+    +execute(element: E): boolean
+    +undo(): void
+}
+
+class Main {
+    +main(args: String[]): void
+}
+
+Main --> CommandAdd
+Main --> CommandRemove
+
+Command <|.. CommandAdd
+Command <|.. CommandRemove
+
+@enduml

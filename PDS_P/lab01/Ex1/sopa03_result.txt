@@ -1,0 +1,33 @@
+Cego           	  4	   7,10	  DownLeft  
+Alto           	  4	  11,18	  UpLeft    
+Pirata         	  6	  11, 6	  DownRight 
+Vagueando      	  9	   5,17	  Left      
+Submarino      	  9	  10, 1	  Up        
+Ostra          	  5	   3, 5	  Right     
+Armadilha      	  9	   7,12	  DownLeft  
+Piso           	  4	   7,14	  DownLeft  
+Comprimento    	 11	   4,20	  Down      
+Montanha       	  8	   9,11	  DownRight 
+Corcunda       	  8	   1, 3	  Down      
+Estrelas       	  8	  11,11	  UpLeft    
+
+. . C . . . . . . . . . . . . . . . . . 
+O . O . . . . . . . . . . . . . . . . . 
+N . R . O S T R A . . . . . . . . . . . 
+I . C S . . . . . . . . . . . . . . . C 
+R . U . A . . . O D N A E U G A V . . O 
+A . N . . L . . . . . . . . . . . . . M 
+M . D . . . E . . C . A . P . . . . . P 
+B . A . . . . R E . R . I . O . . . . R 
+U . . . . . . G T M M S . . . T . . . I 
+S . . . . . O . A S O O . . . . L . . M 
+. . . . . P . D . . E . N . . . . A . E 
+. . . . . . I . . . . . . T . . . . . N 
+. . . . . L . R . . . . . . A . . . . T 
+. . . . H . . . A . . . . . . N . . . O 
+. . . A . . . . . T . . . . . . H . . . 
+. . . . . . . . . . A . . . . . . A . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . 

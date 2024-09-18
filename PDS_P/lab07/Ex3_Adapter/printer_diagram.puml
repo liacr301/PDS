@@ -1,0 +1,67 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+interface PrinterInterface {
+    + print(Document doc): int
+    + print(List<Document> docs): List<Integer>
+    + showQueuedJobs(): void
+    + cancelJob(int jobId): boolean
+    + cancelAll(): void
+    + refill(): void
+}
+
+class Document {
+    - content: String
+    + Document(content: String)
+    + getContent(): String
+}
+
+class AdvancedPrinter {
+    - inkLevel: int
+    - paperLevel: int
+    + printDocument(Document doc): int
+    + printDocuments(List<Document> docs): List<Integer>
+    + showJobs(): void
+    + cancelJob(int jobId): boolean
+    + cancelAllJobs(): void
+    + refillSupplies(): void
+}
+
+class BasicPrinter {
+    - inkAmount: int
+    - paperAmount: int
+    + printContent(String[] content): boolean
+    + refillSupplies(): void
+}
+
+class AdvancedPrinterAdapter {
+    - adaptee: AdvancedPrinter
+    + print(Document doc): int
+    + print(List<Document> docs): List<Integer>
+    + showQueuedJobs(): void
+    + cancelJob(int jobId): boolean
+    + cancelAll(): void
+    + refill(): void
+}
+
+class BasicPrinterAdapter {
+    - adaptee: BasicPrinter
+    + print(Document doc): int
+    + print(List<Document> docs): List<Integer>
+    + showQueuedJobs(): void
+    + cancelJob(int jobId): boolean
+    + cancelAll(): void
+    + refill(): void
+}
+
+PrinterInterface <|.. AdvancedPrinter
+AdvancedPrinterAdapter -right-> AdvancedPrinter
+PrinterInterface <|.. BasicPrinter
+BasicPrinterAdapter -right-> BasicPrinter
+PrinterInterface <|.. AdvancedPrinterAdapter
+PrinterInterface <|.. BasicPrinterAdapter
+
+Document *-- AdvancedPrinterAdapter
+Document *-- BasicPrinterAdapter
+@enduml

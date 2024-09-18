@@ -1,0 +1,59 @@
+@startuml
+!define SimpleFileVisitor <|-- SizeVisitor
+!define FileVisitor <.. SimpleFileVisitor
+!define Path ..> SizeVisitor : uses
+
+package lab12.Ex5_Visitor {
+    class SizeOfDirectory {
+        main(args: String[])
+    }
+
+    class SizeVisitor {
+        - long totalSize
+        - long grandTotalSize
+        - boolean recursive
+        - DecimalFormat df
+        + SizeVisitor(recursive: boolean)
+        + visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult
+        + preVisitDirectory(dir: Path, attrs: BasicFileAttributes): FileVisitResult
+        + postVisitDirectory(dir: Path, exc: IOException): FileVisitResult
+        + getTotalSize(): long
+    }
+
+    interface FileVisitor<T> {
+        visitFile(file: T, attrs: BasicFileAttributes): FileVisitResult
+        preVisitDirectory(dir: T, attrs: BasicFileAttributes): FileVisitResult
+        postVisitDirectory(dir: T, exc: IOException): FileVisitResult
+    }
+
+    abstract class SimpleFileVisitor<T> implements FileVisitor<T> {
+        + visitFile(file: T, attrs: BasicFileAttributes): FileVisitResult
+        + preVisitDirectory(dir: T, attrs: BasicFileAttributes): FileVisitResult
+        + postVisitDirectory(dir: T, exc: IOException): FileVisitResult
+    }
+
+    class Path {
+    }
+
+    class Files {
+        + static walkFileTree(start: Path, visitor: FileVisitor<? super Path>): Path
+    }
+
+    enum FileVisitResult {
+        CONTINUE,
+        TERMINATE,
+        SKIP_SUBTREE,
+        SKIP_SIBLINGS
+    }
+
+    class BasicFileAttributes {
+        + size(): long
+    }
+}
+
+SizeOfDirectory ..> SizeVisitor
+SizeVisitor ..> DecimalFormat
+SizeVisitor ..> BasicFileAttributes
+Files ..> Path
+Files ..> FileVisitor
+@enduml

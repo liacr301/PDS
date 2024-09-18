@@ -1,0 +1,94 @@
+@startuml
+
+class StarType {
+    - size: int
+    - color: Color
+    - description: String
+    - physicalProperties: Float[]
+    - x: int
+    - y: int
+    + StarType(size: int, color: Color, x: int, y: int)
+    + getColor(): Color
+    + setColor(color: Color): void
+    + getSize(): int
+    + getX(): int
+    + setX(x: int): void
+    + getY(): int
+    + setY(y: int): void
+    + draw(g: Graphics): void
+}
+
+class AStar {
+    + AStar(x: int, y: int)
+}
+
+class BStar {
+    + BStar(x: int, y: int)
+}
+
+class FStar {
+    + FStar(x: int, y: int)
+}
+
+class GStar {
+    + GStar(x: int, y: int)
+}
+
+class KStar {
+    + KStar(x: int, y: int)
+}
+
+class MStar {
+    + MStar(x: int, y: int)
+}
+
+class OStar {
+    + OStar(x: int, y: int)
+}
+
+class Demo {
+    - CANVAS_SIZE: int
+    - STARS_TO_DRAW: int
+    + main(args: String[]): void
+    + createStar(type: StarType): Star
+    + random(min: int, max: int): int
+}
+
+class Sky {
+    - stars: List<Star>
+    + placeStar(star: Star): void
+    + paint(graphics: Graphics): void
+}
+
+class Star {
+    - x: int
+    - y: int
+    - starType: StarType
+    + Star(x: int, y: int, starType: StarType)
+    + draw(g: Graphics): void
+}
+
+class StarFactory {
+    - CANVAS_SIZE: int
+    - stars: Map<Character, StarType>
+    + getStarType(type: char): StarType
+    + random(min: int, max: int): int
+}
+
+StarType "1" *-- "1" Color
+StarType <|-- AStar
+StarType <|-- BStar
+StarType <|-- FStar
+StarType <|-- GStar
+StarType <|-- KStar
+StarType <|-- MStar
+StarType <|-- OStar
+
+Demo -- StarFactory
+Demo -- Sky
+
+Sky "1" *-- "*" Star
+
+Star "1" *-- "1" StarType
+
+@enduml

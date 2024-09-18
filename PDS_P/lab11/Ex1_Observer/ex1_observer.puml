@@ -1,0 +1,86 @@
+@startuml
+
+interface Observer {
+    + update(Produto product, boolean licitacao)
+    + notify(Produto product)
+}
+
+class Cliente {
+    - String nome
+    - ArrayList<Produto> produtosleilao
+    + Cliente(String nome)
+    + void update(Produto product, boolean licitacao)
+    + void licitacao(Produto product, double preco)
+    + void notify(Produto product)
+}
+
+class Gestor {
+    - ArrayList<Produto> produtosIn
+    - ArrayList<Produto> produtosOut
+    + Gestor(String nome)
+    + void atualizarEnum(Produto product, enum_produtos tipo)
+    + void update(Produto product, boolean licitacao)
+    + void notify(Produto product)
+}
+
+interface ProdutoState {
+    + void handle(Produto product)
+}
+
+class Produto {
+    - int codigo
+    - String descricao
+    - double preco
+    - ProdutoState estado
+    - Cliente cliente_at
+    - ArrayList<Observer> observers
+    - long tempoMaximoLeilao
+    - long tempoInicioLeilao
+    + Produto(String descricao, double preco, long tempoMaximoLeilao)
+    + void notificar(boolean licitacao, Cliente cliente)
+    + int getCodigo()
+    + void setCodigo(int codigo)
+    + String getDescricao()
+    + void setDescricao(String descricao)
+    + double getPreco()
+    + void setPreco(double preco, Cliente cliente)
+    + ProdutoState getEstado()
+    + void setEstado(ProdutoState estado)
+    + Cliente getCliente_at()
+    + void setCliente_at(Cliente cliente_at)
+    + void addOb(Observer ob)
+    + void verificarEstado()
+    + void iniciarTemporizador()
+}
+
+class StockState {
+    + void handle(Produto product)
+}
+
+class LeilaoState {
+    + void handle(Produto product)
+}
+
+class VendidoState {
+    + void handle(Produto product)
+}
+
+Observer <|-- Cliente
+Observer <|-- Gestor
+Cliente o-- Produto
+Gestor o-- Produto
+Produto "1" o-- "*" Observer
+ProdutoState <|-- StockState
+ProdutoState <|-- LeilaoState
+ProdutoState <|-- VendidoState
+Produto "1" o-- "1" ProdutoState
+
+enum enum_produtos {
+    stock
+    leilao
+    vendido
+}
+
+Produto "1" o-- "1" enum_produtos
+
+@enduml

@@ -1,0 +1,7 @@
+O código fornecido corresponde ao código da classe java.util.Calender. 
+Esta classe apresenta diversos atributos "static" e após a sua inicialização, deparamo-nos 
+com vários construtores da classe (um que preenche os parametros em falta automaticamente, outra
+que permite a escolha desses mesmos parametros, etc).
+Existem, também, métodos getInstance() que chmama a função createCalendar(), que por sua vez cria
+uma nova instância de um calendário de acordo com o tipo pretendido - budista, gregoriano, japonês -
+e a retorna. Estamos, portanto, perante o padrão de construção Factory Method.

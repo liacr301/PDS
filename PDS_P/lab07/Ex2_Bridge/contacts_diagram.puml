@@ -1,0 +1,79 @@
+@startuml
+
+interface ContactsStorageInterface {
+    + loadContacts(): List<Contact>
+    + saveContacts(List<Contact>): boolean
+}
+
+class BinaryContacts {
+    - binaryFile: File
+    + BinaryContacts(File)
+    + loadContacts(): List<Contact>
+    + saveContacts(List<Contact>): boolean
+}
+
+class TXTContacts {
+    - textFile: File
+    + TXTContacts(File)
+    + loadContacts(): List<Contact>
+    + saveContacts(List<Contact>): boolean
+}
+
+interface ContactsInterface {
+    + openAndLoad(ContactsStorageInterface): void
+    + saveAndClose(): void
+    + saveAndClose(ContactsStorageInterface): void
+    + exist(Contact): boolean
+    + getByName(String): Contact
+    + add(Contact): boolean
+    + remove(Contact): boolean
+}
+
+class ContactsType {
+    - contacts: List<Contact>
+    - contactsStore: ContactsStorageInterface
+    + getList(): List<Contact>
+    + openAndLoad(ContactsStorageInterface): void
+    + saveAndClose(): void
+    + saveAndClose(ContactsStorageInterface): void
+    + exist(Contact): boolean
+    + getByName(String): Contact
+    + add(Contact): boolean
+    + remove(Contact): boolean
+}
+
+class Contact {
+    - name: String
+    - phoneNumber: int
+    + Contact(String, int)
+    + Contact()
+    + Contact(String)
+    + getName(): String
+    + setName(String): void
+    + getPhoneNumber(): int
+    + setPhoneNumber(int): void
+    + toString(): String
+}
+
+class StorageContactTypes {
+    - file: File
+    + StorageContactTypes(File)
+    + newFile(String): void
+    + fileType(): String
+    + loadContacts(): List<Contact>
+    + saveContacts(List<Contact>): boolean
+}
+
+class Test {
+    + main(String[]): void
+}
+
+ContactsStorageInterface <|.. BinaryContacts
+ContactsStorageInterface <|.. TXTContacts
+ContactsInterface <|.. ContactsType
+ContactsStorageInterface <|.. StorageContactTypes
+ContactsInterface <|.. Test
+ContactsInterface --> ContactsStorageInterface
+ContactsType *-- Contact
+
+@enduml

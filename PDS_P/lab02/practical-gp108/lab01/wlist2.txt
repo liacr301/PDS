@@ -1,0 +1,7 @@
+standard
+drawing
+software
+apple
+pear
+orange
+resource

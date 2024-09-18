@@ -1,0 +1,52 @@
+@startuml
+
+class Employee {
+    - name : String
+    - emp_num : long
+    - salary : double
+    + getName() : String
+    + getEmpNum() : long
+    + getSalary() : double
+}
+
+class Empregado {
+    - nome : String
+    - apelido : String
+    - codigo : int
+    - salario : double
+    + apelido() : String
+    + nome() : String
+    + codigo() : int
+    + salario() : double
+}
+
+class Database {
+    - employees : Vector<Employee>
+    + addEmployee(Employee) : boolean
+    + deleteEmployee(long) : void
+    + getAllEmployees() : Employee[]
+}
+
+class Registos {
+    - empregados : ArrayList<Empregado>
+    + insere(Empregado) : void
+    + remove(int) : void
+    + isEmpregado(int) : boolean
+    + listaDeEmpregados() : List<Empregado>
+}
+
+class Adapter extends Database {
+    - registos : Registos
+    + addEmployee(Empregado) : void
+    + deleteEmployee(int) : void
+    + isEmployee(int) : boolean
+    + ListAllEmployees() : void
+    + convert(Empregado) : Employee
+}
+
+Database <|-down- Adapter
+Adapter o-right- Registos
+Adapter ..> Employee
+Adapter ..> Empregado
+
+@enduml

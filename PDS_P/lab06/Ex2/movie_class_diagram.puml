@@ -1,0 +1,75 @@
+@startuml
+
+class Movie {
+    - String title
+    - int year
+    - Person director
+    - Person writer
+    - String series
+    - List<Person> cast
+    - List<Place> locations
+    - List<String> languages
+    - List<String> genres
+    - boolean isTelevision
+    - boolean isNetflix
+    - boolean isIndependent
+    + Movie(Builder)
+    + getTitle(): String
+    + getYear(): int
+    + getDirector(): Person
+    + getWriter(): Person
+    + getSeries(): String
+    + getCast(): List<Person>
+    + getLocations(): List<Place>
+    + getLanguages(): List<String>
+    + getGenres(): List<String>
+    + isTelevision(): boolean
+    + isNetflix(): boolean
+    + isIndependent(): boolean
+}
+
+class MovieBuilder {
+    - String title
+    - int year
+    - Person director
+    - Person writer
+    - String series
+    - List<Person> cast
+    - List<Place> locations
+    - List<String> languages
+    - List<String> genres
+    - boolean isTelevision
+    - boolean isNetflix
+    - boolean isIndependent
+    + setTitle(String): MovieBuilder
+    + setYear(int): MovieBuilder
+    + setDirector(Person): MovieBuilder
+    + setWriter(Person): MovieBuilder
+    + setSeries(String): MovieBuilder
+    + setCast(List<Person>): MovieBuilder
+    + setLocations(List<Place>): MovieBuilder
+    + setLanguages(List<String>): MovieBuilder
+    + setGenres(List<String>): MovieBuilder
+    + setIsTelevision(boolean): MovieBuilder
+    + setIsNetflix(boolean): MovieBuilder
+    + setIsIndependent(boolean): MovieBuilder
+    + build(): Movie
+}
+
+class Person {
+    - String name
+    + Person(String)
+    + getName(): String
+}
+
+class Place {
+    - String name
+    + Place(String)
+    + getName(): String
+}
+
+MovieBuilder --> Movie
+Movie --> Person
+Movie --> Place
+
+@enduml

@@ -1,0 +1,116 @@
+@startuml
+
+class Cake {
+    - Shape shape
+    - String cakeLayer
+    - int numCakeLayers
+    - Cream midLayerCream
+    - Cream topLayerCream
+    - Topping topping
+    - String message
+    + Cake()
+    + getShape(): Shape
+    + setShape(Shape): void
+    + getCakeLayer(): String
+    + setCakeLayer(String): void
+    + getNumCakeLayers(): int
+    + setNumCakeLayers(int): void
+    + getMidLayerCream(): Cream
+    + setMidLayerCream(Cream): void
+    + getTopLayerCream(): Cream
+    + setTopLayerCream(Cream): void
+    + getTopping(): Topping
+    + setTopping(Topping): void
+    + getMessage(): String
+    + setMessage(String): void
+    + toString(): String
+}
+
+class CakeBuilder {
+    + setCakeShape(Shape): void
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+    + createCake(): void
+    + getCake(): Cake
+}
+
+abstract class BaseCake {
+    - Cake cake
+    + setCakeShape(Shape): void
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+    + createCake(): void
+    + getCake(): Cake
+}
+
+class CakeMaster {
+    - CakeBuilder builder
+    + setCakeBuilder(CakeBuilder): void
+    + getCake(): Cake
+    + createCake(String): void
+    + createCake(int, String): void
+    + createCake(Shape, int, String): void
+}
+
+class ChocolateCakeBuilder {
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+}
+
+class SpongeCakeBuilder {
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+}
+
+class StrawberryCakeBuilder {
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+}
+
+class YogurtCakeBuilder {
+    + addCakeLayer(): void
+    + addCreamLayer(): void
+    + addTopLayer(): void
+    + addTopping(): void
+    + addMessage(String): void
+}
+
+enum Cream {
+    Whipped_Cream, Red_Berries, Vanilla, Strawberry
+}
+
+enum Shape {
+    Square, Rectangle, Circle
+}
+
+enum Topping {
+    Fruit, Chocolate, Strawberry
+}
+
+CakeMaster --> CakeBuilder
+CakeBuilder <|.. BaseCake : Implements
+ChocolateCakeBuilder ..|> BaseCake : Extends
+SpongeCakeBuilder ..|> BaseCake : Extends
+StrawberryCakeBuilder ..|> BaseCake : Extends
+YogurtCakeBuilder ..|> BaseCake : Extends
+
+Cake *-- Cream
+Cake o-- Shape
+Cake *-- Topping
+
+@enduml

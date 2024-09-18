@@ -1,0 +1,53 @@
+@startuml
+
+interface TextInterface {
+    + hasNext(): boolean
+    + next(): String
+}
+
+class TextReader {
+    - fileName: File
+    - scanner: Scanner
+    + TextReader(fileName: File)
+    + hasNext(): boolean
+    + next(): String
+}
+
+abstract class TextDecorator {
+    - text: TextInterface
+    + TextDecorator(text: TextInterface)
+    + hasNext(): boolean
+    + next(): String
+}
+
+class CapitalizationFilter {
+    + CapitalizationFilter(text: TextInterface)
+    + hasNext(): boolean
+    + next(): String
+}
+
+class NormalizationFilter {
+    + NormalizationFilter(text: TextInterface)
+    + hasNext(): boolean
+    + next(): String
+}
+
+class TermFilter {
+    + TermFilter(text: TextInterface)
+    + hasNext(): boolean
+    + next(): String
+}
+
+class VowelFilter {
+    + VowelFilter(text: TextInterface)
+    + hasNext(): boolean
+    + next(): String
+}
+
+TextInterface <|-- TextReader
+TextDecorator <|-- CapitalizationFilter
+TextDecorator <|-- NormalizationFilter
+TextDecorator <|-- TermFilter
+TextDecorator <|-- VowelFilter
+
+@enduml

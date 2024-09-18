@@ -1,0 +1,24 @@
+InputStream class:
+- é uma classe abstrata que fornece a estrutura base para uma leitura de bytes;
+- Situação em que o Template Method é utilizado:
+    - read(): implementado por subclasses para ler o próximo byte de dados do fluxo de entrada, sendo um ponto de extensão 
+      onde as subclasses podem definir seu comportamento específico de leitura.
+    - skip(long n): tem um buffer interno para dar skip a n bytes no fluxo de entrada, chamando repetidamente read(byte[] b, int off, int len)
+      As subclasses podem fornecer outras implementações, mas a lógica default está definida na classe base.
+
+OutputStream class:
+- define a estrutura para gravação de bytes num fluxo de saída
+- Situação em que o Template Method é utilizado:
+    - write(int b): mplementado por subclasses para escrever o próximo byte de dados no fluxo de saída
+    - write(byte[] b): chama write(byte[] b, int off, int len) que por sua vez utiliza o método abstrato 
+      write(int b) para escrever dados. O padrão Template Method é usado para delegar a lógica específica de gravação para as subclasses
+    - flush(): responsável por limpar quaisquer buffers na saída. Subclasses podem sobrescrever para fornecer funcionalidade adicional, mas a 
+      implementação padrão é fornecida na classe base
+
+AbstractList class:
+- fornece uma implementação esquelética da interface List, para minimizar o esforço necessário para implementar essa interface
+- Situação em que o Template Method é utilizado:
+    - get(int index): subclasses devem implementar este método para retornar o elemento na posição especificada
+    - add(E e): chama add(int index, E element), que depende de get(int index) e outros métodos que as subclasses devem implementar, ilustrando o uso do 
+      Template Method para adicionar elementos à lista
+    - remove(Object o): Define a lógica para remover um objeto da lista, utilizando métodos abstratos como remove(int index) que as subclasses devem implementar

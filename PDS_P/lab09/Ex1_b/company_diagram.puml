@@ -1,0 +1,54 @@
+@startuml
+
+interface BankAccount {
+    + deposit(amount: double)
+    + withdraw(amount: double): boolean
+    + balance(): double
+}
+
+class BankAccountImpl {
+    - bank: String
+    - balance: double
+    + BankAccountImpl(bank: String, initialDeposit: double)
+    + getBank(): String
+    + deposit(amount: double): void
+    + withdraw(amount: double): boolean
+    + balance(): double
+}
+
+class Company {
+    public static User user
+    - emps: List<Employee>
+    + admitEmployee(person: Person, salary: double): void
+    + paySalaries(month: int): void
+    + employees(): List<Employee>
+}
+
+class Employee {
+    - salary: double
+    - name: String
+    - bankAccount: BankAccount
+    + Employee(name: String, salary: double)
+    + getSalary(): double
+    + getName(): String
+    + getBankAccount(): BankAccount
+}
+
+class Person {
+    - name: String
+    + Person(name: String)
+    + getName(): String
+}
+
+enum User {
+    OWNER
+    COMPANY
+}
+
+Company "1" *-- "*" Employee
+Person "1" *-- "1" BankAccount
+Employee "1" *-- "1" BankAccount
+BankAccountImpl --|> BankAccount
+Company -- User
+
+@enduml

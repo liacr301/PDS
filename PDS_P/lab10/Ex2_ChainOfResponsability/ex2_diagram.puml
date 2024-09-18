@@ -1,0 +1,38 @@
+@startuml
+
+abstract class Chef {
+    +Chef(pedido: String)
+    -successor: Chef
+    +canHandle(pedido: String, tipo: String): boolean
+    +setSuccessor(successor: Chef): Chef
+}
+
+class SushiChef {
+    +Chef(pedido: String)
+}
+
+class PastaChef {
+    +Chef(pedido: String)
+}
+
+class BurgerChef {
+    +Chef(pedido: String)
+}
+
+class PizzaChef {
+    +Chef(pedido: String)
+}
+
+class DessertChef {
+    +Chef(pedido: String)
+}
+
+Chef <|-- SushiChef
+Chef <|-- PastaChef
+Chef <|-- BurgerChef
+Chef <|-- PizzaChef
+Chef <|-- DessertChef
+
+Chef --> Chef : successor
+
+@enduml

@@ -1,0 +1,111 @@
+@startuml
+
+interface BankAccount {
+    + deposit(amount: double)
+    + withdraw(amount: double): boolean
+    + balance(): double
+}
+
+class BankAccountImpl {
+    - bank: String
+    - balance: double
+    + BankAccountImpl(bank: String, initialDeposit: double)
+    + getBank(): String
+    + deposit(amount: double): void
+    + withdraw(amount: double): boolean
+    + balance(): double
+}
+
+class Card {
+    - employee: Employee
+    + Card(e: Employee)
+    + toString(): String
+}
+
+class Company {
+    public static User user
+    - emps: List<Employee>
+    + admitEmployee(name: String, salary: double): void
+    + paySalaries(month: int): void
+    + employees(): List<Employee>
+    + averageSalary(): double
+}
+
+class Employee {
+    - salary: double
+    - name: String
+    - empNumber: int
+    - bankAccount: BankAccount
+    + Employee(n: String, s: double)
+    + getSalary(): double
+    + getName(): String
+    + getBankAccount(): BankAccount
+    + setEmpNum(n: int): void
+    + getEmpNum(): int
+}
+
+class Facade {
+    - numEmp: int
+    - company: Company
+    - socialSecurity: SocialSecurity
+    - insurance: Insurance
+    - card: List<Card>
+    - parking: Parking
+    + admitEmployee(n: String, salary: double): void
+    + getCompany(): Company
+}
+
+class Insurance {
+    - employees: List<Employee>
+    + regist(e: Employee): void
+}
+
+class Parking {
+    - parkinList: List<Employee>
+    + allow(e: Employee, company: Company): boolean
+}
+
+class Person {
+    - name: String
+    + Person(n: String)
+    + getName(): String
+}
+
+class Proxy {
+    - bankAccount: BankAccountImpl
+    + Proxy(bankAccount: String, initialDeposit: double)
+    + deposit(amount: double): void
+    + withdraw(amount: double): boolean
+    + balance(): double
+}
+
+class SocialSecurity {
+    - employees: List<Employee>
+    + regist(e: Employee): void
+}
+
+enum User {
+    OWNER
+    COMPANY
+}
+
+Company "1" *-- "*" Employee
+Person "1" *-- "1" BankAccount
+Employee "1" *-- "1" BankAccount
+Employee "1" *-- "1" Card
+Company "1" *-- "1" SocialSecurity
+Company "1" *-- "1" Insurance
+Company "1" *-- "1" Parking
+Company -- User
+Facade -- Company
+Facade -- SocialSecurity
+Facade -- Insurance
+Facade -- Parking
+Card -- Employee
+Insurance "1" *-- "*" Employee
+Parking "1" *-- "*" Employee
+SocialSecurity "1" *-- "*" Employee
+BankAccountImpl --|> BankAccount
+Proxy --|> BankAccount
+
+@enduml

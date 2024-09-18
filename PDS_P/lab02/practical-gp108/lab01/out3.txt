@@ -1,0 +1,22 @@
+standard      8  6,6        Down      
+drawing       7  4,5        Right     
+software      8  5,1        Right     
+apple         5  1,3        Right     
+pear          4  4,1        Right     
+orange        6  7,7        Right     
+resource      8  3,4        Right     
+ . . A P P L E . . . . . . . .
+ . . . . . . . . . . . . . . .
+ . . . R E S O U R C E . . . .
+ P E A R D R A W I N G . . . .
+ S O F T W A R E . . . . . . .
+ . . . . . S . . . . . . . . .
+ . . . . . T O R A N G E . . .
+ . . . . . A . . . . . . . . .
+ . . . . . N . . . . . . . . .
+ . . . . . D . . . . . . . . .
+ . . . . . A . . . . . . . . .
+ . . . . . R . . . . . . . . .
+ . . . . . D . . . . . . . . .
+ . . . . . . . . . . . . . . .
+ . . . . . . . . . . . . . . .

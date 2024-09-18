@@ -1,0 +1,98 @@
+Teste com AdvancedPrinterAdapter:
+Spooling 1 document.
+Spooling 1 document.
+Spooling 1 document.
+Spooled jobs:
+ * Job 0: "This is a great text generator. 
+It does two things: it saves you from having to deal with every single line of text you may encounter but also allows you to quickly create, edit, republish, share and more! 
+Not only does it solve a few problems of the web's standard library, but it is a great way to write code without making the Web a dull, boring experience.
+The most interesting bit to me about the text generator is the number of characters that are added to each line of text as you type. 
+Even though the generator does not use CSS to represent their form and formatting, using a small number of different markup elements makes for an easy and easy process. 
+What we are doing here is allowing JavaScript to represent as little as possible within the form so as not to become an awkward time consuming experience for you.
+
+How to start writing JavaScript using the text generator:
+With your JavaScript installed you can start writing your first code in an interesting way:
+// <script src="//github.com/daniel-pau/trurojs.js"></script> export class Trurojs { display: block; constructor(private constructor($twice, function(){return this.twice.width();})->before(){return this.twice.innerHTML();}()); }
+
+The input in the prototype class does not have to be the same as the text in the document or the document DOM. 
+"
+ * Job 1: "Natural language generation is challenging in all the same ways as English, and can often be harder for English speakers than French speakers. 
+(I have noticed that French, Spanish, German and Dutch are more difficult to make the English bilingual, especially compared to English's more generalized formals, as well.)
+In the last paragraph I discussed how our grammar has evolved over time. 
+More recently I have been working to develop a language with a more specific emphasis on writing in and of itself. 
+I have written a couple of articles about the need to put emphasis in writing and in writing the word "good." 
+That is not what I am trying to do here, but I feel this is a worthwhile approach and could become a helpful tool in some more intensive tasks for writers.
+
+What I do want to do is to encourage writers to develop the word "good."
+If they are writing in and of themselves, then this seems like an obvious idea, but if they are using informal conversation with other English speakers, particularly with people in their first language, it probably isn't an easy thing to do. 
+This would also mean that you need to create the word "good" first. 
+But even a simple way would be to use the word "goodness" first. 
+For example, I would say how good a sentence "I told your mother I wanted to write some great poems on your typewriter" is. 
+"
+ * Job 2: "You which to know how natural language generation works? 
+In order to communicate, we need to learn to communicate as well as learn how to think, act, and think. 
+This is where natural language comes in.
+
+For more time, click here to find out more about this amazing book on how, for many years, natural language has been a source of great learning while also providing great benefits for learning foreign languages.
+The book on how to learn or learn using our natural language is all about how to learn. Learn how to learn a lesson of basic grammar, English, French—any language, anything, and much more.
+
+This book is so powerful. I'm getting ready to write about that next book.
+I also hope the book helps to inspire you to learn new languages.
+"
+Job 6 does not exist or cannot be cancelled.
+Spooled jobs:
+ * Job 0: "This is a great text generator. 
+It does two things: it saves you from having to deal with every single line of text you may encounter but also allows you to quickly create, edit, republish, share and more! 
+Not only does it solve a few problems of the web's standard library, but it is a great way to write code without making the Web a dull, boring experience.
+The most interesting bit to me about the text generator is the number of characters that are added to each line of text as you type. 
+Even though the generator does not use CSS to represent their form and formatting, using a small number of different markup elements makes for an easy and easy process. 
+What we are doing here is allowing JavaScript to represent as little as possible within the form so as not to become an awkward time consuming experience for you.
+
+How to start writing JavaScript using the text generator:
+With your JavaScript installed you can start writing your first code in an interesting way:
+// <script src="//github.com/daniel-pau/trurojs.js"></script> export class Trurojs { display: block; constructor(private constructor($twice, function(){return this.twice.width();})->before(){return this.twice.innerHTML();}()); }
+
+The input in the prototype class does not have to be the same as the text in the document or the document DOM. 
+"
+ * Job 1: "Natural language generation is challenging in all the same ways as English, and can often be harder for English speakers than French speakers. 
+(I have noticed that French, Spanish, German and Dutch are more difficult to make the English bilingual, especially compared to English's more generalized formals, as well.)
+In the last paragraph I discussed how our grammar has evolved over time. 
+More recently I have been working to develop a language with a more specific emphasis on writing in and of itself. 
+I have written a couple of articles about the need to put emphasis in writing and in writing the word "good." 
+That is not what I am trying to do here, but I feel this is a worthwhile approach and could become a helpful tool in some more intensive tasks for writers.
+
+What I do want to do is to encourage writers to develop the word "good."
+If they are writing in and of themselves, then this seems like an obvious idea, but if they are using informal conversation with other English speakers, particularly with people in their first language, it probably isn't an easy thing to do. 
+This would also mean that you need to create the word "good" first. 
+But even a simple way would be to use the word "goodness" first. 
+For example, I would say how good a sentence "I told your mother I wanted to write some great poems on your typewriter" is. 
+"
+ * Job 2: "You which to know how natural language generation works? 
+In order to communicate, we need to learn to communicate as well as learn how to think, act, and think. 
+This is where natural language comes in.
+
+For more time, click here to find out more about this amazing book on how, for many years, natural language has been a source of great learning while also providing great benefits for learning foreign languages.
+The book on how to learn or learn using our natural language is all about how to learn. Learn how to learn a lesson of basic grammar, English, French—any language, anything, and much more.
+
+This book is so powerful. I'm getting ready to write about that next book.
+I also hope the book helps to inspire you to learn new languages.
+"
+Cancelled all jobs.
+No spooled jobs
+Teste com BasicPrinterAdapter:
+Imprimindo página: This is a great text generator. 
+It does two things: it saves you from having to deal with every single line of text you may encounter but also allows you to quickly create, edit, republish, share and more! 
+Not only does it solve a few problems of the web's standard library, but it is a great way to write code without making the Web a dull, boring experience.
+The most interesting bit to me about the text generator is the number of characters that are added to each line of text as you type. 
+Even though the generator does not use CSS to represent their form and formatting, using a small number of different markup elements makes for an easy and easy process. 
+What we are doing here is allowing JavaScript to represent as little as possible within the form so as not to become an awkward time consuming experience for you.
+
+How to start writing JavaScript using the text generator:
+With your JavaScript installed you can start writing your first code in an interesting way:
+// <script src="//github.com/daniel-pau/trurojs.js"></script> export class Trurojs { display: block; constructor(private constructor($twice, function(){return this.twice.width();})->before(){return this.twice.innerHTML();}()); }
+
+The input in the prototype class does not have to be the same as the text in the document or the document DOM. 
+
+Impressora recarregada com sucesso.
+Operation not supported by BasicPrinter
+Operation not supported by BasicPrinter

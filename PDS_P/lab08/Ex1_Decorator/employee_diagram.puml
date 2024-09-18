@@ -1,0 +1,62 @@
+@startuml
+
+interface EmployeeInterface {
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+}
+
+class Employee {
+    - name: String
+    - num_emp: int
+    + Employee(name: String, num_emp: int)
+    + getName(): String
+    + setName(name: String): void
+    + getNum_emp(): int
+    + setNum_emp(num_emp: int): void
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+    + toString(): String
+}
+
+abstract class EmployeeDecorator {
+    - employee: EmployeeInterface
+    + EmployeeDecorator(employee: EmployeeInterface)
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+    + toString(): String
+}
+
+class Manager {
+    + Manager(employee: EmployeeInterface)
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+    + manage(): void
+}
+
+class TeamLeader {
+    + TeamLeader(employee: EmployeeInterface)
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+    + plan(): void
+}
+
+class TeamMember {
+    + TeamMember(employee: EmployeeInterface)
+    + start(start: Date): void
+    + end(end: Date): void
+    + work(): void
+    + collaborate(): void
+}
+
+EmployeeInterface <|-- Employee
+EmployeeInterface <|-- EmployeeDecorator
+EmployeeDecorator <|-- Manager
+EmployeeDecorator <|-- TeamLeader
+EmployeeDecorator <|-- TeamMember
+
+@enduml

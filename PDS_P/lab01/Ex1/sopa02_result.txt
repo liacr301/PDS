@@ -1,0 +1,26 @@
+Alarme         	  6	  13,12	  UpLeft    
+Escritor       	  8	   2, 3	  Right     
+Compartimento  	 13	  14,14	  UpLeft    
+Escape         	  6	   9,12	  UpLeft    
+Frango         	  6	   7, 4	  Down      
+Princesa       	  8	  13, 3	  Right     
+Cereal         	  6	   2,14	  DownLeft  
+Tempo          	  5	   1, 2	  Right     
+Grande         	  6	   1, 7	  Right     
+Maldade        	  7	  14,12	  UpLeft    
+Polvo          	  5	   3, 8	  DownRight 
+
+. T E M P O G R A N D E . . 
+. O E S C R I T O R . . . C 
+. . T . . . . P . . . . E . 
+. . . N . . E . O . . R . . 
+. . . . E . . P . L E . . . 
+. . . . . M . . A A V . . . 
+. . . F . . I . L C . O . . 
+. . . R . E E T . . S . . . 
+. . . A . . D M R . . E . . 
+. . . N . . . A R A . . . . 
+. . . G . . . . D A P . . . 
+. . . O . . . . . L L M . . 
+. . P R I N C E S A A A O . 
+. . . . . . . . . . . M . C 

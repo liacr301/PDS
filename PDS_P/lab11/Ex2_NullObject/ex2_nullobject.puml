@@ -1,0 +1,32 @@
+@startuml
+
+abstract class Employee {
+    - String name
+    + abstract String getName()
+}
+
+class Programmer extends Employee {
+    + Programmer(String name)
+    + String getName()
+}
+
+class EmployeeNull extends Employee {
+    + EmployeeNull(String name)
+    + String getName()
+}
+
+class EmployeeFactory {
+    + static final String[] names
+    + static Employee getEmployee(String name)
+}
+
+class NullDemo {
+    + static void main(String[] args)
+}
+
+Employee <|-- Programmer
+Employee <|-- EmployeeNull
+EmployeeFactory --> Employee
+NullDemo ..> EmployeeFactory
+
+@enduml

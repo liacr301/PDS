@@ -1,0 +1,68 @@
+@startuml
+
+class VectorGeneric {
+    - vec: T[]
+    - nElem: int
+    - dimVec: int = ALLOC
+    - ALLOC: final int = 50
+
+    + VectorGeneric()
+    + addElem(elem: T): boolean
+    + removeElem(elem: T): boolean
+    + totalElem(): int
+    + getElem(i: int): T
+    + iterator(): Iterator<T>
+    + listIterator(): ListIterator<T>
+    + listIterator(index: int): ListIterator<T>
+}
+
+interface Iterator<T> {
+    + hasNext(): boolean
+    + next(): T
+    + remove(): void
+}
+
+interface ListIterator<T> {
+    + hasNext(): boolean
+    + hasPrevious(): boolean
+    + next(): T
+    + previous(): T
+    + nextIndex(): int
+    + previousIndex(): int
+    + set(e: T): void
+    + add(e: T): void
+}
+
+class VectorIterator {
+    - currentIndex: int
+    - vector: VectorGeneric<T>
+
+    + VectorIterator(vector: VectorGeneric<T>)
+    + hasNext(): boolean
+    + next(): T
+    + remove(): void
+}
+
+class VectorListIterator {
+    - indice: int
+    - vector: VectorGeneric<T>
+
+    + VectorListIterator(vector: VectorGeneric<T>)
+    + VectorListIterator(vector: VectorGeneric<T>, index: int)
+    + hasNext(): boolean
+    + hasPrevious(): boolean
+    + next(): T
+    + previous(): T
+    + nextIndex(): int
+    + previousIndex(): int
+    + set(e: T): void
+    + add(e: T): void
+}
+
+VectorGeneric "1" --> "*" VectorIterator
+VectorGeneric "1" --> "*" VectorListIterator
+
+VectorIterator ..> Iterator
+VectorListIterator ..> ListIterator
+
+@enduml
